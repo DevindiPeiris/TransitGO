@@ -52,7 +52,7 @@ function FormConductor() {
 
   const onSubmitPack = async () => {
     console.log(packageID);
-    //e.preventDefault();
+    
     try {
       const response = await axios.put(`http://localhost:8080/package/${packageID}`, pack, Authorization );
       console.log(response);
@@ -63,7 +63,7 @@ function FormConductor() {
       loadPackageDetails();
     } catch (error) {
       alert("Package is not available");
-      //console.error("Error in submitting: ", error.response?.status, error.response?.data);
+      
     }
   };
 
