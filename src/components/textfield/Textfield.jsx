@@ -10,6 +10,8 @@ function Textfield() {
   const Authorization = {
     headers: {Authorization: `Bearer ${token}`}
   }
+
+  
   const [pack, setPack] = useState({
     busID: "",
     destination: "",
@@ -24,8 +26,10 @@ function Textfield() {
     employeeId: ""
   });
 
+
   const [busStops, setBusStops] = useState([]);
   const [availableBuses, setAvailableBuses] = useState([]);
+
   const [errors, setErrors] = useState({
     fromError: false,
     toError: false,
@@ -35,6 +39,7 @@ function Textfield() {
     receiverNICError: false,
     receiverContactError: false
   });
+
   const [billDetails, setBillDetails] = useState(null);
   const [billOpen, setBillOpen] = useState(false);
   const { busID, destination, receivedDate, start, receiverName, receiverContact, receiverNIC, employeeName, employeePhone } = pack;
@@ -43,6 +48,7 @@ function Textfield() {
     fetchBusStops();
   }, []);
 
+  
   useEffect(() => {
     if (start && destination && receivedDate) {
       fetchAvailableBuses();
@@ -231,7 +237,7 @@ function Textfield() {
         busRegNo: selectedBus.regNo,
         departureTime: selectedBus.fromStopDepartureTime,
         arrivalTime : selectedBus.destinationStopArrivalTime,
-        start: start,  // You can add logic to fetch the arrival time
+        start: start,  
         destination : destination,
 
         conductorName: updatedPack.employeeName,
