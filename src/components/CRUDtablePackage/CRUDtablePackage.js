@@ -55,22 +55,7 @@ export default function CRUDtablePackage({}) {
   const [filteredRows, setFilteredRows] = useState(rows); // New state for filtered rows
   const [searchValue, setSearchValue] = useState(""); // New state for search input value
 
-  // Function to handle search input change
-  /*const handleSearchChange = (e) => {
-    setSearchValue(e.target.value);
-    const filtered = packages.filter(
-      (row) =>
-        row.packageID.includes(e.target.value) ||
-        row.from.toLowerCase().includes(e.target.value.toLowerCase()) ||
-        row.to.toLowerCase().includes(e.target.value.toLowerCase()) ||
-        row.busID.toLowerCase().includes(e.target.value.toLowerCase()) ||
-        row.receiverName.toLowerCase().includes(e.target.value.toLowerCase()) ||
-        row.nic.toLowerCase().includes(e.target.value.toLowerCase()) ||
-        row.deliveryStatus.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-
-    setFilteredRows(filtered);
-  };*/
+  
 
   const handleSearchChange = (e) => {
     const searchValue = e.target.value.toLowerCase();
@@ -95,7 +80,7 @@ export default function CRUDtablePackage({}) {
   
 
   const columns = [
-    { field: "packageID", headerName: "ID", width: 50 },
+    { field: "packageID", headerName: "ID", width: 100 },
     { field: "start", headerName: "From", width: 120 },
     { field: "destination", headerName: "To", width: 100 },
     { field: "busID", headerName: "Bus Id", width: 90 },
